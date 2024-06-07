@@ -9,6 +9,30 @@
 # packages, and plugins designed to encourage good coding practices.
 include: package:flutter_lints/flutter.yaml
 
+analyzer:
+  plugins:
+    - custom_lint
+  errors:
+    invalid_annotation_target: ignore
+  exclude: [
+    test/repository,
+    test/utils,
+    test/view,
+    lib/const,
+    lib/notifications,
+    lib/plugin,
+    lib/providers,
+    lib/repository,
+    lib/route_observer,
+    lib/utils,
+    lib/validator,
+    lib/view,
+    lib/view_model,
+    lib/*.dart,
+    "**/*.g.dart",
+    "**/*.freezed.dart"
+  ]
+
 linter:
   # The lint rules applied to this project can be customized in the
   # section below to disable rules from the `package:flutter_lints/flutter.yaml`
