@@ -6,7 +6,7 @@ part of 'home_page_notifier.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$homePageNotifierHash() => r'f02fd0ba557ca39c0f74ab3d9fa7a98404f01002';
+String _$homePageNotifierHash() => r'bb428f631555acbd4d5f977d645aa6d02755e5c3';
 
 /// See also [HomePageNotifier].
 @ProviderFor(HomePageNotifier)

@@ -1,6 +1,7 @@
+import 'package:money_minder/model/home_page_info_response.dart';
+import 'package:money_minder/model/home_page_state.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
-
-import 'home_page_state.dart';
+import 'home_page_service.dart';
 
 part 'home_page_notifier.g.dart';
 
@@ -9,12 +10,15 @@ class HomePageNotifier extends _$HomePageNotifier {
   @override
   FutureOr<HomePageState> build() async {
     final result = await getData();
-    return HomePageState(name: '', date: result);
+    return HomePageState(
+      name: 'zhang',
+      homePageInfoResponse: result,
+    );
   }
 
-  Future<String> getData() async {
-    await Future.delayed(const Duration(seconds: 2));
-    return DateTime.now().toString();
+  Future<HomePageInfoResponse> getData() async {
+    final service = ref.read(homePageServiceProvider);
+    return await service.getHomePageInfo();
   }
 
   Future<void> refreshData() async {
@@ -25,7 +29,7 @@ class HomePageNotifier extends _$HomePageNotifier {
         return;
       }
       final result = await getData();
-      state = AsyncData(state.value!.copyWith(date: result));
+      state = AsyncData(state.value!.copyWith(homePageInfoResponse: result));
     } catch (error, stackTrace) {
       state = AsyncError(error, stackTrace);
     }

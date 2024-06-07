@@ -34,8 +34,8 @@ class CustomAPIInterceptors extends Interceptor {
   ) async {
     // onRequest
     if (true) {
-      const accessToken = '';
-      options.headers['Authorization'] = accessToken;
+      // const accessToken = '';
+      // options.headers['Authorization'] = accessToken;
       super.onRequest(options, handler);
     } else {
       handler.reject(

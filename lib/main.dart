@@ -1,7 +1,9 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:money_minder/home_page_notifier.dart';
+import 'package:money_minder/model/home_page_notifier.dart';
 
 void main() {
   runApp(const ProviderScope(
@@ -50,7 +52,7 @@ class HomePage extends HookConsumerWidget {
       widget = Column(
         children: [
           Text('name = ${state.value?.name ?? ''}'),
-          Text('date = ${state.value?.date ?? ''}'),
+          Text('date = ${state.value?.homePageInfoResponse ?? ''}'),
         ],
       );
     } else if (state is AsyncLoading) {

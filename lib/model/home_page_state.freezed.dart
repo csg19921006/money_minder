@@ -17,7 +17,8 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$HomePageState {
   String? get name => throw _privateConstructorUsedError;
-  String? get date => throw _privateConstructorUsedError;
+  HomePageInfoResponse? get homePageInfoResponse =>
+      throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $HomePageStateCopyWith<HomePageState> get copyWith =>
@@ -30,7 +31,9 @@ abstract class $HomePageStateCopyWith<$Res> {
           HomePageState value, $Res Function(HomePageState) then) =
       _$HomePageStateCopyWithImpl<$Res, HomePageState>;
   @useResult
-  $Res call({String? name, String? date});
+  $Res call({String? name, HomePageInfoResponse? homePageInfoResponse});
+
+  $HomePageInfoResponseCopyWith<$Res>? get homePageInfoResponse;
 }
 
 /// @nodoc
@@ -47,18 +50,31 @@ class _$HomePageStateCopyWithImpl<$Res, $Val extends HomePageState>
   @override
   $Res call({
     Object? name = freezed,
-    Object? date = freezed,
+    Object? homePageInfoResponse = freezed,
   }) {
     return _then(_value.copyWith(
       name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String?,
-      date: freezed == date
-          ? _value.date
-          : date // ignore: cast_nullable_to_non_nullable
-              as String?,
+      homePageInfoResponse: freezed == homePageInfoResponse
+          ? _value.homePageInfoResponse
+          : homePageInfoResponse // ignore: cast_nullable_to_non_nullable
+              as HomePageInfoResponse?,
     ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $HomePageInfoResponseCopyWith<$Res>? get homePageInfoResponse {
+    if (_value.homePageInfoResponse == null) {
+      return null;
+    }
+
+    return $HomePageInfoResponseCopyWith<$Res>(_value.homePageInfoResponse!,
+        (value) {
+      return _then(_value.copyWith(homePageInfoResponse: value) as $Val);
+    });
   }
 }
 
@@ -70,7 +86,10 @@ abstract class _$$HomePageStateImplCopyWith<$Res>
       __$$HomePageStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String? name, String? date});
+  $Res call({String? name, HomePageInfoResponse? homePageInfoResponse});
+
+  @override
+  $HomePageInfoResponseCopyWith<$Res>? get homePageInfoResponse;
 }
 
 /// @nodoc
@@ -85,17 +104,17 @@ class __$$HomePageStateImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? name = freezed,
-    Object? date = freezed,
+    Object? homePageInfoResponse = freezed,
   }) {
     return _then(_$HomePageStateImpl(
       name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String?,
-      date: freezed == date
-          ? _value.date
-          : date // ignore: cast_nullable_to_non_nullable
-              as String?,
+      homePageInfoResponse: freezed == homePageInfoResponse
+          ? _value.homePageInfoResponse
+          : homePageInfoResponse // ignore: cast_nullable_to_non_nullable
+              as HomePageInfoResponse?,
     ));
   }
 }
@@ -103,16 +122,16 @@ class __$$HomePageStateImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$HomePageStateImpl implements _HomePageState {
-  _$HomePageStateImpl({this.name, this.date});
+  _$HomePageStateImpl({this.name, this.homePageInfoResponse});
 
   @override
   final String? name;
   @override
-  final String? date;
+  final HomePageInfoResponse? homePageInfoResponse;
 
   @override
   String toString() {
-    return 'HomePageState(name: $name, date: $date)';
+    return 'HomePageState(name: $name, homePageInfoResponse: $homePageInfoResponse)';
   }
 
   @override
@@ -121,11 +140,12 @@ class _$HomePageStateImpl implements _HomePageState {
         (other.runtimeType == runtimeType &&
             other is _$HomePageStateImpl &&
             (identical(other.name, name) || other.name == name) &&
-            (identical(other.date, date) || other.date == date));
+            (identical(other.homePageInfoResponse, homePageInfoResponse) ||
+                other.homePageInfoResponse == homePageInfoResponse));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, name, date);
+  int get hashCode => Object.hash(runtimeType, name, homePageInfoResponse);
 
   @JsonKey(ignore: true)
   @override
@@ -135,13 +155,14 @@ class _$HomePageStateImpl implements _HomePageState {
 }
 
 abstract class _HomePageState implements HomePageState {
-  factory _HomePageState({final String? name, final String? date}) =
-      _$HomePageStateImpl;
+  factory _HomePageState(
+      {final String? name,
+      final HomePageInfoResponse? homePageInfoResponse}) = _$HomePageStateImpl;
 
   @override
   String? get name;
   @override
-  String? get date;
+  HomePageInfoResponse? get homePageInfoResponse;
   @override
   @JsonKey(ignore: true)
   _$$HomePageStateImplCopyWith<_$HomePageStateImpl> get copyWith =>

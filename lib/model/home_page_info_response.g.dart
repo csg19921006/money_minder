@@ -9,15 +9,13 @@ part of 'home_page_info_response.dart';
 _$HomePageInfoResponseImpl _$$HomePageInfoResponseImplFromJson(
         Map<String, dynamic> json) =>
     _$HomePageInfoResponseImpl(
-      id: (json['id'] as num).toInt(),
-      name: json['name'] as String,
-      cod: (json['cod'] as num).toInt(),
+      status: json['status'] as String,
+      paths: (json['paths'] as List<dynamic>).map((e) => e as String).toList(),
     );
 
 Map<String, dynamic> _$$HomePageInfoResponseImplToJson(
         _$HomePageInfoResponseImpl instance) =>
     <String, dynamic>{
-      'id': instance.id,
-      'name': instance.name,
-      'cod': instance.cod,
+      'status': instance.status,
+      'paths': instance.paths,
     };

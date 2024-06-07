@@ -1,5 +1,5 @@
-import 'package:money_minder/home_page_info_response.dart';
-import 'package:money_minder/home_page_repository.dart';
+import 'package:money_minder/model/home_page_info_response.dart';
+import 'package:money_minder/model/home_page_repository.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'home_page_service.g.dart';
